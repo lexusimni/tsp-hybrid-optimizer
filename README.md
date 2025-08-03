@@ -61,27 +61,27 @@ These were read into memory and parsed using `ast.literal_eval()` to recover num
 ## 🔍 Visual Process & Results
 
 ### 📍 Initial TSP Map  
-**Saved as:** `tsp_map.png`  
+![TSP Map](outputs/tsp_map.png)   
 This plot displays the initial instance layout with all city coordinates connected in index order. Helpful for debugging and verifying data structure.
 
 ---
 
 ### 🚶‍♂️ Nearest Neighbor (Greedy)
-**Saved as:** `nn_tour.png`  
+![Nearest Neighbor Tour](outputs/nn_tour.png)
 Tour length: **1057.39**  
 The NN algorithm chooses the closest unvisited city at each step. Fast but produces inefficient long paths due to local decisions.
 
 ---
 
 ### 🔁 2-opt Optimization
-**Saved as:** `2opt_tour.png`  
+![2-Opt Tour](outputs/2opt_tour.png)
 Tour length: **921.12**  
 We applied edge swapping to reduce the route length. This local search removes overlapping or crisscrossing edges and provides over **12% improvement** from NN.
 
 ---
 
 ### 🧬 Genetic Algorithm
-**Saved as:** `ga_tour.png`  
+![GA Tour](outputs/ga_tour.png)
 Tour length: **905.77**  
 We simulated evolution using:
 - **Population of routes**
@@ -94,7 +94,7 @@ GA converged to strong results with a smooth route and fewer overlaps.
 ---
 
 ### 🐜 Ant Colony Optimization
-**Saved as:** `aco_tour.png`  
+![ACO Tour](outputs/aco_tour.png)
 Tour length: **899.56**  
 ACO simulates pheromone behavior:
 - Pheromones bias the next city selection
@@ -106,7 +106,7 @@ It **outperformed all other methods** with a near-optimal path.
 ---
 
 ### 🧠 Reinforcement Learning (Q-Learning)
-**Saved as:** `rl_reward_curve.png`  
+![RL Reward Curve](outputs/rl_reward_curve.png)
 Tour length: **1020.00**  
 We implemented tabular Q-learning:
 - **States** = (current city, visited binary mask)
@@ -119,14 +119,14 @@ This agent underperformed compared to ACO/GA due to episode limits but still lea
 ---
 
 ### 🔍 SHAP Explainability
-**Saved as:** `shap_rl.png`  
+![SHAP RL](outputs/shap_rl.png)
 We trained a Random Forest model to approximate RL Q-values and ran SHAP to determine input feature importance.  
 Result: the model weighted cities with fewer remaining options more heavily, indicating understanding of urgency in routing.
 
 ---
 
 ### 🎞️ Route Animation
-**Saved as:** `animation.mp4`  
+![Tour Animation](outputs/animation.gif)
 A full GIF/MP4 shows route construction over time. This is helpful to visualize:
 - City visitation order
 - Tour overlaps disappearing
