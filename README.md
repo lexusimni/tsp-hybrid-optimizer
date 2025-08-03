@@ -127,6 +127,7 @@ Result: the model weighted cities with fewer remaining options more heavily, ind
 
 ### 🎞️ Route Animation
 ![Tour Animation](outputs/ga_animated_tour.gif)
+
 A full GIF/MP4 shows route construction over time. This is helpful to visualize:
 - City visitation order
 - Tour overlaps disappearing
