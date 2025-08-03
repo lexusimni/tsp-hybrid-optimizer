@@ -119,7 +119,7 @@ This agent underperformed compared to ACO/GA due to episode limits but still lea
 ---
 
 ### 🔍 SHAP Explainability
-![SHAP RL](outputs/shap_rl.png)
+![SHAP RL](outputs/shap_feature_importance.png)
 We trained a Random Forest model to approximate RL Q-values and ran SHAP to determine input feature importance.  
 Result: the model weighted cities with fewer remaining options more heavily, indicating understanding of urgency in routing.
 
